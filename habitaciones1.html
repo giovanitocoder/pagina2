@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de habitaciones Hotel samaros</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <style>
+
+    body
+    {
+    background:#E3DAC9;
+    color:black;
+    }
+
+    #boton1
+    {
+        background-image: url("https://www.flaticon.es/svg/vstatic/svg/3917/3917034.svg?token=exp=1656644382~hmac=882913a546a3350cb5f55605ccefc207");
+    }
+
+    .nav-item
+    {
+        color: black;
+        display: block;
+        font-size: 10pt;
+        font-family: 'GothamBook';
+        padding: 1px 30px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        transition: background .5s;
+        border-right: 1px solid #000000;
+    }
+    
+    </style>
+    </head>
+
+    <body>
+    <header>
+            <nav class="navbar navbar-expand-lg bg-light fixed-top">
+                <div class="container-fluid">  <!-- Inicio del div contenedor principal-->
+                    <a class="navbar-brand" href="#">
+                        <img src="icon.jpg" alt="" width="50" height="50" class="d-inline-block align-text-top">
+                        Hotel Samaros</a>
+                    <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" id ="boton1"><img src="boton.png"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" > <!-- Contenedor para generar efecto menu -->
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id = "navul1">
+                            <li class="nav-item"><a class="nav-link active" href="login.html">Salir</a></li>
+                            <li class="nav-item"><a class="nav-link" href="reservaciones.html">Reservas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="habitaciones.html">Habitaciones</a></li>
+                            <li class="nav-item"><a class="nav-link" href="modificaciones.html">Modificar habitacion</a></li>
+                            <li class="nav-item"><a class="nav-link" href="modificacion_reservas.html">Modificar Reservaciones</a></li>
+                        </ul>
+                    </div> <!-- Cierre del div efecto menu -->
+                </div> <!-- Cierre del div contenedor principal -->
+        </nav>
+    </header>
+
+
+
+  <form
+  style =
+  "
+  width: 500px;
+  padding: 30px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: black;
+  background:white;
+  box-shadow: 7px 13px 37px #A06D9E;
+  "
+  action="/action_page.php">
+
+ <h2 style="text-align: center;">Registro de Habitaciones</h2>
+  <div class="form-group">
+    <label for="cantidadpersonas">Tipo habitacion:</label>
+    <select style="background: white;" id="cantpersonas" class="form-control">
+        <option selected >Siut</option>
+        <option>Doble</option>
+        <option>Triple</option>
+    </select>
+  </div>
+  <br>
+
+  <div class="form-group">
+    <label for="cantidadpersonas">Servicios :</label>
+    <select style="background: white"; id="cantpersonas" class="form-control">
+        <option selected >Television</option>
+        <option>Internet</option>
+        <option>Television</option>
+    </select>
+ <br> 
+
+</div>
+ <div class="form-group">
+    <textarea style="background: white; color:white;" name="descripcion" rows="5" cols="60" >Descripcion</textarea>
+ </div>
+
+  <br>
+  <h4 style="text-align: center;">Imagenes de la habitacion</h4>
+  <hr style="color: #D529E3;">
+  <div class="form-group">
+    <label>Habitacion :</label>
+    <input type ="file" name="img1" rows="5" cols="60"></input>
+ </div><hr>
+  <div class="form-group">
+    <label>Baño :</label>
+    <input type ="file"  name="img2" rows="5" cols="60"></input>
+ </div><hr>
+  <div class="form-group">
+    <label>Sala :</label>
+    <input type ="file" name="img3" rows="5" cols="60"></input>
+ </div>
+ <hr>
+
+  <button style =
+  "
+  width: 100%;
+  background:black;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+  " 
+  type="submit" class="btn btn-default">Registrar</button>
+</form>
+
+
+<hr>
+<section style ="padding: 20px;">
+
+  <h2 style ="text-align: center;">LISTA DE HABITACIONES</h2>
+  <table class="table" style="background:white; color:black;  border-color:#8F3A84;">
+    <thead style ="background:#35b3a7;">
+      <th scope ="col">Numero</th>
+      <th scope ="col">Tipo</th>
+      <th scope ="col">Servicios</th>
+      <th scope ="col">precio</th>
+      <th scope ="col">Disponible</th>
+      <th sope ="col"></th>
+    </thead>
+    <tbody>
+      <tr>
+      <th scope="row">1</th>
+      <td>Suit</td>
+       <td>Baño<br>
+           Agua caliente<br>
+           <button style ="background:#76FF03; color:black;">Agregar nuevo</button><input type="text" name="servicio"><br>
+           <button style="background:red; color:white;">Eliminar servicio</button><select id="cantpersonas">
+                <option selected >Baño</option>
+                <option>Agua caliente</option>
+          </select>
+       </td>
+        <td>2000</td>
+        <td>SI</td>
+        <td><button style="background:red; color:white;">Eliminar</button> <button style ="background:#18FFFF; color:black;">Modificar</button></td>
+      </tr>
+      <tr>
+      <th scope="row">2</th>
+      <td>doble</td>
+       <td>Baño<br>
+           Agua caliente<br>
+           <button style ="background:#76FF03; color:black;">Agregar nuevo</button><input type="text" name="servicio"><br>
+           <button style="background:red; color:white;">Eliminar servicio</button><select id="cantpersonas">
+                <option selected >Baño</option>
+                <option>Agua caliente</option>
+          </select>
+       </td>
+        <td>2000</td>
+        <td>SI</td>
+        <td><button style="background:red; color:white;">Eliminar</button><button style ="background:#18FFFF; color:black;">Modificar</button></td>
+      </tr>
+      <tr>
+      <th scope="row">3</th>
+      <td>triple</td>
+       <td>Baño<br>Agua<br>caliente<br>internet<br>televisor<br>
+        <button style ="background:#76FF03; color:black;">Agregar nuevo</button><input type="text" name="servicio"><br>
+        <button style="background:red; color:white;">Eliminar servicio</button><select id="cantpersonas">
+                <option selected >Baño</option>
+                <option>Agua caliente</option>
+        </select>
+       </td>
+        <td>2000</td>
+        <td>SI</td>
+        <td><button style="background:red; color:white;">Eliminar</button> <button style ="background:#18FFFF; color:black;">Modificar</button></td>
+      </tr>
+      <tr>
+      <th scope="row">4</th>
+      <td>doble</td>
+       <td>Baño<br>
+           Agua caliente<br>
+           <button style ="background:#76FF03; color:black;">Agregar nuevo</button><input type="text" name="servicio"><br>
+           <button style="background:red; color:white;">Eliminar servicio</button><select id="cantpersonas">
+                <option selected >Baño</option>
+                <option>Agua caliente</option>
+          </select>
+       </td>
+        <td>2000</td>
+        <td>NO</td>
+        <td><button style="background:red; color:white;">Eliminar</button> <button style ="background:#18FFFF; color:black;">Modificar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+   </body>
+
+</html>
